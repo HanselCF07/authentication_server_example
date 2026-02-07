@@ -4,7 +4,7 @@ FROM python:3.8-slim
 LABEL Maintainer="hansel_prins10@hotmail.com"
 
 # Definir el directorio de trabajo
-WORKDIR /authentication_service
+WORKDIR /authentication_server_example
 
 # Copiar primero requirements para aprovechar el caché de capas de Docker
 COPY requirements.txt .
@@ -17,5 +17,5 @@ COPY . .
 # Exponer el puerto
 EXPOSE 8000
 
-# Como tu archivo es run.py, debe ser 'run:app'
-CMD ["gunicorn", "-w", "4", "-b", "0.0.0.0:8000", "run:app"]
+# Como tu archivo es run.py, debe ser 'run:run'
+CMD ["gunicorn", "-w", "2", "-b", "0.0.0.0:8000", "run:run"]
