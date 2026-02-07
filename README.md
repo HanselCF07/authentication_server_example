@@ -1,6 +1,7 @@
+Run With: Python 3.8 Version
+
 # authentication_server_example
 Python Flask - authentication server example
-
 
 
 # Construir la imagen
@@ -8,7 +9,6 @@ docker build -t flask-app:latest .
 
 # Ejecutar el contenedor en localhost:8000 and inject environment variables
 docker run -d -p 8000:8000 --env-file .env --name flask-container flask-app:latest
-
 
 
 # Iniciar Minikube (si no está corriendo)
@@ -26,5 +26,6 @@ kubectl apply -f k8s-ingress.yaml
 kubectl get pods
 # Ver servicios
 kubectl get svc
+
 
 
