@@ -14,8 +14,8 @@ spec:
         app: authentication-server-example
     spec:
       containers:
-      - name: authentication-server-example-container
-        image: authentication-server-example:latest
+      - name: authentication-server-example
+        image: authentication-server-example:v1
         ports:
         - containerPort: 8000
         # env:
