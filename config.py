@@ -77,6 +77,6 @@ class ProdConfig(Config):
 
 app_config = {
     'dev': DevConfig,
-    'qa': QaConfig,
-    'pro': ProdConfig
+    'qas': QaConfig,
+    'prd': ProdConfig
 }
