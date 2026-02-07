@@ -18,7 +18,7 @@ class DefaultViewer(MethodView):
             set_access_cookies(response, access_token)  # Guardar token en cookie
             return response
         except Exception as e:
-            return jsonify(msg="Error en el servidor", error=str(e)), 500
+            return jsonify(msg="Server error", error=str(e)), 500
 
 
 def validate_user(username, password):
@@ -33,24 +33,24 @@ class Login(MethodView):
         try:
             user = validate_user("Hansel", "password")
             if not user:
-                return jsonify(msg="Credenciales inválidas"), 401
+                return jsonify(msg="Invalid credentials"), 401
 
             access_token = create_access_token(
                 identity=user["username"],
                 additional_claims={"role": user["role"]}
             )
 
-            response = make_response(jsonify({"message": "Login exitoso"}), 200)
+            response = make_response(jsonify({"message": "Login successful"}), 200)
 
             set_access_cookies(response, access_token)  # Guardar token en cookie
             return response
         except Exception as e:
-            return jsonify(msg="Error en el servidor", error=str(e)), 500
+            return jsonify(msg="Server error", error=str(e)), 500
 
 
 class Logout(MethodView):
     def post(self):
-        response = make_response(jsonify({"message": "Logout exitoso"}), 200)
+        response = make_response(jsonify({"message": "Logout successful"}), 200)
         unset_jwt_cookies(response)
         return response
 

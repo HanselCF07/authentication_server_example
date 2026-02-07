@@ -4,7 +4,8 @@ from app.repository import user_repository as UserRepository
 
 user_bp = Blueprint("user", __name__)
 
-# Registrar la vista con prefijo /api/user
+# Register the view with its prefix
+
 #user_bp.add_url_rule( "/register", view_func=UserRepository.Register.as_view("register") )
 #user_bp.add_url_rule( "/profile", view_func=UserRepository.Profile.as_view("profile") )
 #user_bp.add_url_rule( "/default/viewer", view_func=UserRepository.DefaultViewer.as_view("defaultViewer") )
