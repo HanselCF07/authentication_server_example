@@ -17,5 +17,5 @@ COPY . .
 # Exponer el puerto
 EXPOSE 8000
 
-# Como tu archivo es run.py, debe ser 'run:run'
-CMD ["gunicorn", "-w", "2", "-b", "0.0.0.0:8000", "run:run"]
+# Como tu archivo es run.py, debe ser 'run:app'
+CMD ["gunicorn", "-w", "2", "-b", "0.0.0.0:8000", "run:app"]
