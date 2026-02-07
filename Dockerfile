@@ -1,15 +1,21 @@
 FROM python:3.8-slim
 
-LABEL Mantainer "hansel_prins10@hotmail.com"
+# "Maintainer" está obsoleto, usa LABEL org.opencontainers.image.authors
+LABEL Maintainer="hansel_prins10@hotmail.com"
 
+# Definir el directorio de trabajo
 WORKDIR /authentication_service
 
+# Copiar primero requirements para aprovechar el caché de capas de Docker
 COPY requirements.txt .
-RUN pip3 install --upgrade pip
-RUN pip3 install --no-cache-dir -r requirements.txt
+RUN pip3 install --no-cache-dir --upgrade pip && \
+    pip3 install --no-cache-dir -r requirements.txt
 
-COPY *.py ./
+# Copiar el código fuente (puedes usar . para copiar todo el contexto)
+COPY . .
 
+# Exponer el puerto
 EXPOSE 8000
 
-CMD ["gunicorn", "-w", "4", "-b", "0.0.0.0:8000", "app:app"]
+# Como tu archivo es run.py, debe ser 'run:app'
+CMD ["gunicorn", "-w", "4", "-b", "0.0.0.0:8000", "run:app"]

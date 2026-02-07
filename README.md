@@ -5,11 +5,17 @@ Python Flask - authentication server example
 
 
 # Build the image
-docker build -t flask-app:latest .
+docker build -t uthentication-server-example:v1 .
+docker run -d -p 8000:8000 uthentication-server-example:v1
 
 # Run the container in localhost:8000 and inject environment variables
 # Remember to create a file with the environment variables used in the App Configuration
-docker run -d -p 8000:8000 --env-file .env --name flask-container flask-app:latest
+docker run -d -p 8000:8000 --env-file .env uthentication-server-example:v1
+
+
+# Test API
+curl -X POST http://localhost:8000/api/v1/authentication/user/login \
+-H "Content-Type: application/json" \
 
 
 # Start Minikube (if it is not running)
