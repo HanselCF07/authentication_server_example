@@ -4,27 +4,28 @@ Run With: Python 3.8 Version
 Python Flask - authentication server example
 
 
-# Construir la imagen
+# Build the image
 docker build -t flask-app:latest .
 
-# Ejecutar el contenedor en localhost:8000 and inject environment variables
+# Run the container in localhost:8000 and inject environment variables
+# Remember to create a file with the environment variables used in the App Configuration
 docker run -d -p 8000:8000 --env-file .env --name flask-container flask-app:latest
 
 
-# Iniciar Minikube (si no está corriendo)
+# Start Minikube (if it is not running)
 minikube start --driver=docker
 
-# Crear Deployment y Service
+# Create Deployment and Service
 kubectl apply -f k8s-deployment.yaml
 kubectl apply -f k8s-service.yaml
 
-# Configurar Ingress 
+# Configure Ingress
 kubectl apply -f k8s-ingress.yaml
 
 
-# Ver pods
+# View pods
 kubectl get pods
-# Ver servicios
+# View servicios
 kubectl get svc
 
 
