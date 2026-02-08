@@ -9,10 +9,12 @@ spec:
   rules:
   - http:
       paths:
-      - path: /
+      - path: /api/v1/authentication
         pathType: Prefix
         backend:
           service:
             name: authentication-server-example-service
             port:
               number: 8000
+
+
