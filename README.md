@@ -31,6 +31,9 @@
 # Configure Ingress (Opcional)
     kubectl apply -f k8s-ingress.yaml
 
+# Activar el Ingress Controller (Opcional)
+    minikube addons enable ingress
+
 # View pods
     kubectl get pods
 # View servicios
