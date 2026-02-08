@@ -28,13 +28,16 @@
     kubectl apply -f k8s-deployment.yaml
     kubectl apply -f k8s-service.yaml
 
-# Configure Ingress
+# Configure Ingress (Opcional)
     kubectl apply -f k8s-ingress.yaml
 
 # View pods
     kubectl get pods
 # View servicios
     kubectl get svc
+
+# Reenvío de puertos (La más rápida para pruebas)
+    kubectl port-forward --address 0.0.0.0 service/NOMBRE_DE_TU_SERVICIO 8000:8000 (puerto a exponer servidor):(puerto servicio)
 
 
 
