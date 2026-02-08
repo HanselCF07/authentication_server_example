@@ -20,12 +20,13 @@ class Config:
     JWT_ACCESS_TOKEN_EXPIRES = int(os.environ.get("JWT_EXPIRATION_DELTA", None))
     # Signature algorithm for JWT (e.g., HS256)
     JWT_ALGORITHM = os.environ.get("JWT_ALGORITHM", None)
-
     # TO ENABLE JWT WITH USE OF COOKIES
-    JWT_TOKEN_LOCATION = os.environ.get("JWT_TOKEN_LOCATION", None)   # Search for the token in cookies or headers
+    JWT_TOKEN_LOCATION = os.environ.get("JWT_TOKEN_LOCATION", None)   # Search for the token in cookies
+
     JWT_ACCESS_COOKIE_NAME = os.environ.get("JWT_ACCESS_COOKIE_NAME", None)  # Cookie name
     JWT_COOKIE_SECURE = os.environ.get("JWT_COOKIE_SECURE", False)          # True if you use HTTPS
     JWT_COOKIE_CSRF_PROTECT = os.environ.get("JWT_COOKIE_CSRF_PROTECT", True)     # CSRF Protection
+    JWT_COOKIE_SAMESITE = os.environ.get("JWT_COOKIE_SAMESITE", None) # SameSite attribute for cookies (e.g., 'Lax', 'Strict', 'None')
 
     # TO ENABLE JWT WITH USE OF HEADERS
     #JWT_TOKEN_LOCATION = ["headers"] # Search for the token in the Authorization header
