@@ -20,6 +20,12 @@
 # Start Minikube (if it is not running)
     minikube start --driver=docker
 
+# Al ejecutar el siguiente comando, tu terminal actual enviará las imágenes directamente al clúster:
+    eval $(minikube docker-env)
+
+# Ver iamgenes cargadas en minikube
+    minikube image ls
+
 # Upload the image directly to the cluster (without registry)
     minikube image load authentication-server-example:v1  # Si usas Minikube
     

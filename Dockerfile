@@ -15,7 +15,7 @@ RUN pip3 install --no-cache-dir --upgrade pip && \
 COPY . .
 
 # Exponer el puerto
-EXPOSE 8000
+EXPOSE 5000
 
 # Como tu archivo es run.py, debe ser 'run:app'
 CMD ["gunicorn", "-w", "2", "-b", "0.0.0.0:5000", "run:app"]
