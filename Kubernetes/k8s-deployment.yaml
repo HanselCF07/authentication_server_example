@@ -16,7 +16,7 @@ spec:
       - name: authentication-server-example
         image: authentication-server-example:v1
         ports:
-        - containerPort: 8000
+        - containerPort: 5000
         # env:
         # - name: FLASK_ENV
         #   valueFrom:

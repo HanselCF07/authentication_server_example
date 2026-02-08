@@ -7,8 +7,8 @@ spec:
     app: authentication-server-example
   ports:
     - protocol: TCP
-      port: 8000 # Puerto expuesto dentro del cluster
-      targetPort: 8000 # Puerto en el contenedor Flask
+      port: 5000 # Puerto expuesto dentro del cluster
+      targetPort: 5000 # Puerto en el contenedor Flask
   type: ClusterIP
 
 

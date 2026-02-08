@@ -18,4 +18,4 @@ COPY . .
 EXPOSE 8000
 
 # Como tu archivo es run.py, debe ser 'run:app'
-CMD ["gunicorn", "-w", "2", "-b", "0.0.0.0:8000", "run:app"]
+CMD ["gunicorn", "-w", "2", "-b", "0.0.0.0:5000", "run:app"]
