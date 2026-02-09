@@ -5,8 +5,15 @@
 
 
 # Build the image
-    docker build -t authentication-server-example:v1 .
+    docker build --no-cache -t authentication-server-example:v1 .
+
+# Inspect Docker Img
+    docker inspect authentication-server-example:v1 | grep ExposedPorts -A 5
+
+# Run Docker img
     docker run -d -p 5000:5000 authentication-server-example:v1
+
+
 
 # Run the container in localhost:8000 and inject environment variables
 # Remember to create a file with the environment variables used in the App Configuration
